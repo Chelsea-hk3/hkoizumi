@@ -3,3 +3,33 @@
 <script src="https://assets.adobedtm.com/99f4e8b020eb/c675e6432f2f/launch-df870185bdf6-development.min.js" async></script>
 <link rel="stylesheet" href="/styles/styles.css"/>
 <link rel="icon" href="data:,">
+
+<script>
+    const pathName = location.pathname;
+    if (pathName === "/cart/thankyou") {
+        // for generate random price & purchaseID
+        const S="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const N="0123456789";
+        var purchaseID = "" || Array.from(Array(12)).map(()=>S[Math.floor(Math.random()*S.length)]).join('');
+        var transactionID = Array.from(Array(12)).map(()=>S[Math.floor(Math.random()*S.length)]).join('');
+        var itemPrice1 = null || parseInt(Array.from(Array(4)).map(()=>N[Math.floor(Math.random()*N.length)]).join(''),10);
+        var itemPrice2 = parseInt(Array.from(Array(4)).map(()=>N[Math.floor(Math.random()*N.length)]).join(''),10);
+        var productID = "" || Array.from(Array(6)).map(()=>S[Math.floor(Math.random()*S.length)]).join('');
+
+        window.pushOrderData = {
+        "data":{
+            "orderId": purchaseID,
+            "orderTotal":itemPrice1,
+            "productPurchaseId": productID,
+            "orderItemNumber": 1,
+            "orderProductListItems": [{
+            "SKU": productID,
+            "currencyCode": "USD",
+            "quantity": 1,
+            "priceTotal": itemPrice1
+            }],
+            "currencyCode": "USD"
+        }
+        };
+    }
+</script>
