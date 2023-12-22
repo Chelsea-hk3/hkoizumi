@@ -17,19 +17,34 @@
         var productID = "" || Array.from(Array(6)).map(()=>S[Math.floor(Math.random()*S.length)]).join('');
 
         window.pushOrderData = {
-        "data":{
-            "orderId": purchaseID,
-            "orderTotal":itemPrice1,
-            "productPurchaseId": productID,
-            "orderItemNumber": 1,
-            "orderProductListItems": [{
-            "SKU": productID,
-            "currencyCode": "USD",
-            "quantity": 1,
-            "priceTotal": itemPrice1
-            }],
-            "currencyCode": "USD"
-        }
+            "data":{
+                "orderId": purchaseID,
+                "orderTotal":itemPrice1,
+                "productPurchaseId": productID,
+                "orderItemNumber": 1,
+                "orderProductListItems": [{
+                "SKU": productID,
+                "currencyCode": "USD",
+                "quantity": 1,
+                "priceTotal": itemPrice1
+                }],
+                "currencyCode": "USD"
+            }
+        };
+    } else if (location.pathname.includes('/product') && location.pathname !== ('/product/campaign')) {
+        window.pushOrderData = {
+            "__adobe": {
+                "target": {
+                    "entity.id": 'JP_' + location.pathname.split('/')[2].toUpperCase(),
+                    "entity.name": location.pathname.split('/')[2].toUpperCase(),
+                    "entity.pageUrl": location.href,
+                    "entity.genre": "Watches",
+                    "entity.value": 10000,
+                    "entity.inventory": 1000,
+                    "entity.message": "",
+                    "entity.categoryId": 25,
+                }
+            }
         };
     }
 </script>
