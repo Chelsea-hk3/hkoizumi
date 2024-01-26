@@ -13,7 +13,7 @@
         var transactionID = Array.from(Array(12)).map(()=>S[Math.floor(Math.random()*S.length)]).join('');
         var itemPrice1 = null || parseInt(Array.from(Array(4)).map(()=>N[Math.floor(Math.random()*N.length)]).join(''),10);
         var itemPrice2 = parseInt(Array.from(Array(4)).map(()=>N[Math.floor(Math.random()*N.length)]).join(''),10);
-        var productID = "" || Array.from(Array(6)).map(()=>S[Math.floor(Math.random()*S.length)]).join('');
+        var productID = document.referrer?.split('/')[4].toUpperCase() || "DWE-5610";
 
         window.pushOrderData = {
             "data":{
