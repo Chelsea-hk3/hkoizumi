@@ -1,6 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <script src="/scripts/scripts.js" type="module"></script>
-<script src="https://assets.adobedtm.com/99f4e8b020eb/c675e6432f2f/launch-df870185bdf6-development.min.js" async></script>
 <link rel="stylesheet" href="/styles/styles.css"/>
 <link rel="icon" href="data:,">
 
@@ -33,18 +32,22 @@
         };
     } else if (location.pathname.includes('/product') && location.pathname !== ('/product/campaign')) {
         window.pushOrderData = {
-            "__adobe": {
-                "target": {
-                    "entity.id": 'JP_' + location.pathname.split('/')[2].toUpperCase(),
-                    "entity.name": location.pathname.split('/')[2].toUpperCase(),
-                    "entity.pageUrl": location.href,
-                    "entity.genre": "Watches",
-                    "entity.value": 10000,
-                    "entity.inventory": 1000,
-                    "entity.message": "",
-                    "entity.categoryId": 25,
+            "data":{
+                "__adobe": {
+                    "target": {
+                        "entity.id": 'JP_' + location.pathname.split('/')[2].toUpperCase(),
+                        "entity.name": location.pathname.split('/')[2].toUpperCase(),
+                        "entity.pageUrl": location.href,
+                        "entity.genre": "Watches",
+                        "entity.value": 10000,
+                        "entity.inventory": 1000,
+                        "entity.message": "",
+                        "entity.categoryId": 25,
+                    }
                 }
             }
         };
     }
 </script>
+
+<script src="https://assets.adobedtm.com/99f4e8b020eb/c675e6432f2f/launch-df870185bdf6-development.min.js" async></script>
