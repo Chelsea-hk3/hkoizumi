@@ -6,11 +6,11 @@
         "data": [
             {
                 "name": "Columns",
-                "path": "https://main--boilerplate-with-library--dylandepass.hlx.live/tools/sidekick/blocks/columns/columns.plain.html"
+                "path": "/tools/sidekick/blocks/columns/columns"
             },
             {
                 "name": "Cards",
-                "path": "https://main--boilerplate-with-library--dylandepass.hlx.live/tools/sidekick/blocks/cards/cards.plain.html"
+                "path": "/tools/sidekick/blocks/cards/cards"
             }
         ]
     },
